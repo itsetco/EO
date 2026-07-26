@@ -234,7 +234,7 @@ button, .scene, .deck-row, .chip, a{
 
 /* -- Contenido: título (tarjeta intro 1) -- */
 .title-block{ text-align:center; padding: 8% 11%; display:flex; flex-direction:column; align-items:center; }
-.title-block h1{
+.title-block h1, .cover-block h1{
   font-family: var(--title-font);
   text-transform: uppercase;
   color: var(--card-accent);
@@ -271,6 +271,16 @@ button, .scene, .deck-row, .chip, a{
   margin-bottom: 5px;
 }
 .title-block .imprint-line--muted{ color: var(--card-accent); opacity:.85; font-size: var(--title-meta-muted-size); }
+
+/* -- Contenido: portada neutra entre cada tirada -- */
+.cover-block{ text-align:center; padding: 8% 11%; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.cover-block h1{ margin-bottom: 6px; }
+.cover-block .cover-hint{
+  font-family: var(--body-font);
+  font-style: italic;
+  font-size: var(--title-meta-size);
+  color: var(--card-ink-soft);
+}
 
 /* -- Contenido: explicación (tarjeta intro 2) -- */
 .explainer-block{ padding: 9% 12%; }
@@ -1459,6 +1469,17 @@ function renderTitleCard(){
     </div>`;
 }
 
+// Paso neutro entre cada tirada: no es una carta de estrategia ni la portada
+// de presentación completa, solo el título y una invitación a seguir. Se
+// intercala siempre entre dos cartas aleatorias (ver advance()).
+function renderCoverCard(){
+  contentEl.innerHTML = `
+    <div class="cover-block">
+      <h1>Estrategias Oblicuas</h1>
+      <p class="cover-hint">Toca para sacar una carta</p>
+    </div>`;
+}
+
 function renderExplainerCard(){
   contentEl.innerHTML = `
     <div class="explainer-block">
@@ -1565,9 +1586,11 @@ function advance(){
   if(state.phase === 'intro1'){
     flipTo(() => { state.phase = 'intro2'; renderExplainerCard(); renderCardInfo(); });
   } else if(state.phase === 'intro2'){
+    flipTo(() => { state.phase = 'cover'; state.currentCard = null; renderCoverCard(); renderCardInfo(); });
+  } else if(state.phase === 'cover'){
     flipTo(() => { state.phase = 'drawing'; drawNext(); });
-  } else {
-    flipTo(() => { drawNext(); });
+  } else { // 'drawing': antes de la próxima carta aleatoria, vuelve a la portada neutra
+    flipTo(() => { state.phase = 'cover'; state.currentCard = null; renderCoverCard(); renderCardInfo(); });
   }
 }
 function showIntro(){
