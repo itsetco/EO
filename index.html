@@ -50,14 +50,13 @@
   /* Escala tipográfica de la tarjeta — clamp(piso, % relativo al ancho
      de la propia tarjeta vía container query, techo). Se achica junto
      con la tarjeta en pantallas chicas en vez de desbordar. */
-  /* ✅ Aumentada ~20% */
-  --strategy-size:         clamp(11.5px, 2.96cqw, 16px);
-  --title-h1-size:         clamp(19px,  4.88cqw, 26px);
-  --title-h2-size:         clamp(13px,  3.11cqw, 17px);
-  --title-meta-size:       clamp(11px,  2.45cqw, 13px);
-  --title-meta-muted-size: clamp(10px,  2.33cqw, 12.5px);
-  --explainer-size:        clamp(11.5px, 2.77cqw, 15px);
-  --empty-size:            clamp(12px,  2.89cqw, 15.5px);
+  --strategy-size:         clamp(9.5px, 2.47cqw, 13.3px);
+  --title-h1-size:         clamp(16px,  4.07cqw, 22px);
+  --title-h2-size:         clamp(11px,  2.59cqw, 14px);
+  --title-meta-size:       clamp(9px,   2.04cqw, 11px);
+  --title-meta-muted-size: clamp(8.5px, 1.94cqw, 10.5px);
+  --explainer-size:        clamp(9.5px, 2.31cqw, 12.5px);
+  --empty-size:            clamp(10px,  2.41cqw, 13px);
 
   --radius-card: 20px;
   --radius-btn:  12px;
@@ -141,7 +140,7 @@ button, .scene, .deck-row, .chip, a{
   letter-spacing: .18em;
   color: var(--accent);
   font-weight:600;
-  font-size: clamp(28px, 6vw, 58px); /* ✅ aumentado */
+  font-size: clamp(24px, 5.2vw, 50px);
   text-align:center;
   animation: splashFade 2.6s ease both;
 }
@@ -344,10 +343,10 @@ button, .scene, .deck-row, .chip, a{
   border: 1px solid var(--card-hair);
   background: transparent;
   color: var(--card-accent);
-  padding: 10px 18px; /* ✅ un toque más grande */
+  padding: 9px 16px;
   border-radius: var(--radius-btn);
   cursor:pointer;
-  font-size: 14px; /* ✅ aumentado */
+  font-size: 12px;
   letter-spacing:.02em;
   margin-top: 16px;
   transition: all .18s ease;
@@ -367,23 +366,23 @@ button, .scene, .deck-row, .chip, a{
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
   border-radius: 14px;
-  padding: 12px 16px; /* ✅ un toque más */
+  padding: 10px 14px;
   display:flex; flex-direction:column; align-items:center; gap:4px;
   backdrop-filter: blur(6px);
 }
 .dept-badge{
   font-family: var(--body-font);
-  font-size: 12.5px; /* ✅ aumentado */
+  font-size: 10.5px;
   font-weight: 600;
   letter-spacing: .03em;
-  padding: 5px 14px; /* ✅ un toque más */
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
   display:inline-block;
   flex-shrink: 0;
 }
 .credit-name{
   font-family: var(--body-font);
-  font-size: 15px; /* ✅ aumentado */
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--panel-ink);
   text-align:center;
@@ -393,8 +392,8 @@ button, .scene, .deck-row, .chip, a{
    simplemente suma más filas; no hay tope, todas envuelven prolijamente. */
 .fuentes-list{ display:flex; flex-direction:column; align-items:center; gap:5px; width:100%; margin-top:4px; }
 .fuente-row{ display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
-.fuente-meta{ font-family: var(--body-font); font-size: 13px; /* ✅ aumentado */ color: var(--panel-ink-soft); }
-.info-note{ font-family: var(--body-font); font-size:13px; /* ✅ aumentado */ letter-spacing:.04em; color: var(--panel-ink-soft); padding: 3px 0; }
+.fuente-meta{ font-family: var(--body-font); font-size: 11px; color: var(--panel-ink-soft); }
+.info-note{ font-family: var(--body-font); font-size:11px; letter-spacing:.04em; color: var(--panel-ink-soft); padding: 3px 0; }
 
 /* ============================================================
    CAJÓN IZQUIERDO — Información del proyecto
@@ -427,7 +426,7 @@ button, .scene, .deck-row, .chip, a{
   font-family: var(--title-font);
   text-transform:uppercase;
   letter-spacing: .18em;
-  font-size: 13px; /* ✅ aumentado */
+  font-size: 11px;
   color: var(--accent);
 }
 
@@ -451,7 +450,7 @@ button, .scene, .deck-row, .chip, a{
   color: var(--panel-ink-soft);
   cursor:pointer;
   display:flex; align-items:center; justify-content:center;
-  font-size:15px; /* ✅ aumentado */
+  font-size:13px;
   transition: all .15s ease;
   flex-shrink:0;
 }
@@ -466,34 +465,34 @@ button, .scene, .deck-row, .chip, a{
   text-transform:uppercase;
   letter-spacing:.18em;
   color: var(--accent);
-  font-size: 13.5px; /* ✅ aumentado */
+  font-size: 11.5px;
   margin-bottom: 10px;
 }
 .pi-title{
   font-family: var(--title-font);
-  font-size: 24px; /* ✅ aumentado */
+  font-size: 20px;
   font-weight:600;
   color: var(--panel-ink);
   margin-bottom: 12px;
 }
 .pi-body{
   font-family: var(--body-font);
-  font-size: 14.5px; /* ✅ aumentado */
+  font-size: 12.5px;
   line-height:1.65;
   color: var(--panel-ink);
   margin-bottom: 10px;
 }
 .pi-body--muted{ color: var(--panel-ink-soft); }
-.pi-hint{ font-family: var(--body-font); font-size:13.5px; /* ✅ aumentado */ color:var(--panel-ink-soft); font-style:italic; }
+.pi-hint{ font-family: var(--body-font); font-size:11.5px; color:var(--panel-ink-soft); font-style:italic; }
 
 .pi-row-between{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
-.pi-count{ font-family: var(--body-font); font-size:14px; /* ✅ aumentado */ color:var(--accent); font-weight:600; letter-spacing:.02em; }
+.pi-count{ font-family: var(--body-font); font-size:12px; color:var(--accent); font-weight:600; letter-spacing:.02em; }
 
 .pi-presets{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
 .chip{
   font-family: var(--body-font);
-  font-size: 13px; /* ✅ aumentado */
-  padding: 7px 14px; /* ✅ un toque más */
+  font-size: 11px;
+  padding: 6px 12px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--panel-border);
   color: var(--panel-ink-soft);
@@ -505,7 +504,7 @@ button, .scene, .deck-row, .chip, a{
 .pi-group-label{
   font-family: var(--body-font);
   text-transform:uppercase;
-  font-size: 12px; /* ✅ aumentado */
+  font-size: 10.5px;
   letter-spacing:.12em;
   color: var(--panel-ink-soft);
   margin: 14px 0 8px;
@@ -515,7 +514,7 @@ button, .scene, .deck-row, .chip, a{
 .deck-list{ display:flex; flex-direction:column; }
 .deck-row{
   display:flex; align-items:center; justify-content:space-between;
-  padding: 10px 2px; /* ✅ un toque más */
+  padding: 9px 2px;
   border-bottom: 1px solid var(--panel-border);
   cursor:pointer;
 }
@@ -523,7 +522,7 @@ button, .scene, .deck-row, .chip, a{
 .deck-list .deck-row:not(.deck-row--master){ padding-left: 18px; } /* sangría: se leen como hijos de "Institución completa" */
 .dept-row-name{
   display:flex; align-items:center; gap:9px;
-  font-family: var(--body-font); font-size:14.5px; /* ✅ aumentado */ color:var(--panel-ink);
+  font-family: var(--body-font); font-size:12.5px; color:var(--panel-ink);
 }
 .dept-swatch{
   width:11px; height:11px; border-radius:50%;
@@ -532,15 +531,15 @@ button, .scene, .deck-row, .chip, a{
 }
 .deck-row--master .dept-row-name{ font-weight:600; }
 .deck-row-right{ display:flex; align-items:center; gap:10px; }
-.deck-count{ font-family: var(--body-font); font-size:13px; /* ✅ aumentado */ color:var(--panel-ink-soft); min-width:18px; text-align:right; }
-.deck-row input[type="checkbox"]{ width:18px; height:18px; /* ✅ un toque más */ accent-color: var(--accent); cursor:pointer; }
+.deck-count{ font-family: var(--body-font); font-size:11px; color:var(--panel-ink-soft); min-width:18px; text-align:right; }
+.deck-row input[type="checkbox"]{ width:16px; height:16px; accent-color: var(--accent); cursor:pointer; }
 
 .toggle-row{ display:flex; gap:8px; margin-bottom:4px; }
 .toggle-btn{
   flex:1;
   font-family: var(--body-font);
-  font-size:14.5px; /* ✅ aumentado */
-  padding: 10px 0; /* ✅ un toque más */
+  font-size:12.5px;
+  padding: 9px 0;
   border-radius: var(--radius-btn);
   border: 1px solid var(--panel-border);
   color: var(--panel-ink-soft);
@@ -567,7 +566,7 @@ button, .scene, .deck-row, .chip, a{
 
 .credits-card{
   position:relative;
-  width:100%; max-width: 420px; /* ✅ un toque más ancho */
+  width:100%; max-width: 400px;
   max-height: 78vh;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
@@ -593,12 +592,12 @@ button, .scene, .deck-row, .chip, a{
   text-transform:uppercase;
   letter-spacing:.18em;
   color: var(--accent);
-  font-size: 13.5px; /* ✅ aumentado */
+  font-size: 11.5px;
   margin-bottom: 8px;
 }
 .credits-title{
   font-family: var(--title-font);
-  font-size: 25px; /* ✅ aumentado */
+  font-size: 21px;
   font-weight:600;
   color: var(--panel-ink);
   margin-bottom: 22px;
@@ -608,14 +607,14 @@ button, .scene, .deck-row, .chip, a{
 .credits-label{
   font-family: var(--body-font);
   text-transform:uppercase;
-  font-size: 11.5px; /* ✅ aumentado */
+  font-size: 10px;
   letter-spacing:.1em;
   color: var(--accent);
   margin-bottom: 4px;
 }
 .credits-value{
   font-family: var(--body-font);
-  font-size: 14.5px; /* ✅ aumentado */
+  font-size: 12.5px;
   line-height:1.55;
   color: var(--panel-ink);
 }
@@ -630,7 +629,7 @@ button, .scene, .deck-row, .chip, a{
   display:flex; align-items:center; gap:16px;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
-  padding: 10px 14px 10px 22px; /* ✅ un toque más */
+  padding: 9px 12px 9px 20px;
   border-radius: var(--radius-pill);
   opacity:0; pointer-events:none;
   transition: opacity .5s ease, transform .5s ease;
@@ -638,7 +637,7 @@ button, .scene, .deck-row, .chip, a{
 }
 .interactions.visible{ opacity:1; pointer-events:auto; transform: translateX(-50%) translateY(0); }
 
-.pool-status{ font-family: var(--body-font); font-size:13.5px; /* ✅ aumentado */ color:var(--panel-ink-soft); white-space:nowrap; }
+.pool-status{ font-family: var(--body-font); font-size:11.5px; color:var(--panel-ink-soft); white-space:nowrap; }
 .interactions-buttons{ display:flex; align-items:center; gap:10px; }
 
 .btn{
@@ -646,10 +645,10 @@ button, .scene, .deck-row, .chip, a{
   border: 1px solid var(--panel-border);
   background: transparent;
   color: var(--panel-ink);
-  padding: 11px 18px; /* ✅ un toque más */
+  padding: 10px 16px;
   border-radius: var(--radius-btn);
   cursor:pointer;
-  font-size: 14.5px; /* ✅ aumentado */
+  font-size: 12.5px;
   letter-spacing:.02em;
   white-space:nowrap;
   transition: all .18s ease;
@@ -663,29 +662,29 @@ button, .scene, .deck-row, .chip, a{
    Responsivo — teléfonos & tablets
    ============================================================ */
 @media (hover: none) and (pointer: coarse){
-  .deck-row{ padding: 13px 2px; } /* ✅ aumentado */
-  .toggle-btn{ padding: 12px 0; } /* ✅ aumentado */
-  .chip{ padding: 9px 15px; } /* ✅ aumentado */
-  .drawer-close{ width:36px; height:36px; } /* ✅ aumentado */
+  .deck-row{ padding: 11px 2px; }
+  .toggle-btn{ padding: 10px 0; }
+  .chip{ padding: 8px 13px; }
+  .drawer-close{ width:34px; height:34px; }
 }
 
 @media (max-width: 520px){
-  .interactions{ gap:10px; padding:9px 12px 9px 18px; /* ✅ ajustado */ bottom: calc(16px + env(safe-area-inset-bottom)); }
+  .interactions{ gap:10px; padding:8px 10px 8px 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }
   .pool-status{ display:none; }
-  .btn{ padding:10px 15px; /* ✅ ajustado */ font-size:13.5px; /* ✅ ajustado */ }
+  .btn{ padding:9px 13px; font-size:12px; }
   .pi-scroll{ padding:6px 18px calc(24px + env(safe-area-inset-bottom)); }
   .drawer-tab{ padding:14px 6px; }
 }
 
 @media (max-width: 360px){
-  .interactions{ padding:9px 10px 9px 16px; /* ✅ ajustado */ gap:8px; }
-  .btn{ padding:9px 13px; /* ✅ ajustado */ font-size:13px; /* ✅ ajustado */ }
+  .interactions{ padding:8px 8px 8px 14px; gap:8px; }
+  .btn{ padding:8px 11px; font-size:11.5px; }
 }
 
 @media (max-height: 480px){
   .card-wrap{ gap:5px; }
-  .splash p{ font-size: clamp(22px, 7vw, 38px); } /* ✅ ajustado */
-  .interactions{ bottom: calc(10px + env(safe-area-inset-bottom)); padding:7px 12px 7px 18px; /* ✅ ajustado */ }
+  .splash p{ font-size: clamp(20px, 6vw, 34px); }
+  .interactions{ bottom: calc(10px + env(safe-area-inset-bottom)); padding:6px 10px 6px 16px; }
   .drawer-tab{ padding: 10px 6px; }
 }
 
