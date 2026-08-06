@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Estrategias Oblicuas — Edición Institucional</title>
+<title>Lateralgias</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,13 +50,14 @@
   /* Escala tipográfica de la tarjeta — clamp(piso, % relativo al ancho
      de la propia tarjeta vía container query, techo). Se achica junto
      con la tarjeta en pantallas chicas en vez de desbordar. */
-  --strategy-size:         clamp(9.5px, 2.47cqw, 13.3px);
-  --title-h1-size:         clamp(16px,  4.07cqw, 22px);
-  --title-h2-size:         clamp(11px,  2.59cqw, 14px);
-  --title-meta-size:       clamp(9px,   2.04cqw, 11px);
-  --title-meta-muted-size: clamp(8.5px, 1.94cqw, 10.5px);
-  --explainer-size:        clamp(9.5px, 2.31cqw, 12.5px);
-  --empty-size:            clamp(10px,  2.41cqw, 13px);
+  /* ✅ Aumentada ~20% */
+  --strategy-size:         clamp(11.5px, 2.96cqw, 16px);
+  --title-h1-size:         clamp(19px,  4.88cqw, 26px);
+  --title-h2-size:         clamp(13px,  3.11cqw, 17px);
+  --title-meta-size:       clamp(11px,  2.45cqw, 13px);
+  --title-meta-muted-size: clamp(10px,  2.33cqw, 12.5px);
+  --explainer-size:        clamp(11.5px, 2.77cqw, 15px);
+  --empty-size:            clamp(12px,  2.89cqw, 15.5px);
 
   --radius-card: 20px;
   --radius-btn:  12px;
@@ -140,7 +141,7 @@ button, .scene, .deck-row, .chip, a{
   letter-spacing: .18em;
   color: var(--accent);
   font-weight:600;
-  font-size: clamp(24px, 5.2vw, 50px);
+  font-size: clamp(28px, 6vw, 58px); /* ✅ aumentado */
   text-align:center;
   animation: splashFade 2.6s ease both;
 }
@@ -343,10 +344,10 @@ button, .scene, .deck-row, .chip, a{
   border: 1px solid var(--card-hair);
   background: transparent;
   color: var(--card-accent);
-  padding: 9px 16px;
+  padding: 10px 18px; /* ✅ un toque más grande */
   border-radius: var(--radius-btn);
   cursor:pointer;
-  font-size: 12px;
+  font-size: 14px; /* ✅ aumentado */
   letter-spacing:.02em;
   margin-top: 16px;
   transition: all .18s ease;
@@ -366,23 +367,23 @@ button, .scene, .deck-row, .chip, a{
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
   border-radius: 14px;
-  padding: 10px 14px;
+  padding: 12px 16px; /* ✅ un toque más */
   display:flex; flex-direction:column; align-items:center; gap:4px;
   backdrop-filter: blur(6px);
 }
 .dept-badge{
   font-family: var(--body-font);
-  font-size: 10.5px;
+  font-size: 12.5px; /* ✅ aumentado */
   font-weight: 600;
   letter-spacing: .03em;
-  padding: 4px 12px;
+  padding: 5px 14px; /* ✅ un toque más */
   border-radius: var(--radius-pill);
   display:inline-block;
   flex-shrink: 0;
 }
 .credit-name{
   font-family: var(--body-font);
-  font-size: 12.5px;
+  font-size: 15px; /* ✅ aumentado */
   font-weight: 600;
   color: var(--panel-ink);
   text-align:center;
@@ -392,8 +393,8 @@ button, .scene, .deck-row, .chip, a{
    simplemente suma más filas; no hay tope, todas envuelven prolijamente. */
 .fuentes-list{ display:flex; flex-direction:column; align-items:center; gap:5px; width:100%; margin-top:4px; }
 .fuente-row{ display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
-.fuente-meta{ font-family: var(--body-font); font-size: 11px; color: var(--panel-ink-soft); }
-.info-note{ font-family: var(--body-font); font-size:11px; letter-spacing:.04em; color: var(--panel-ink-soft); padding: 3px 0; }
+.fuente-meta{ font-family: var(--body-font); font-size: 13px; /* ✅ aumentado */ color: var(--panel-ink-soft); }
+.info-note{ font-family: var(--body-font); font-size:13px; /* ✅ aumentado */ letter-spacing:.04em; color: var(--panel-ink-soft); padding: 3px 0; }
 
 /* ============================================================
    CAJÓN IZQUIERDO — Información del proyecto
@@ -426,7 +427,7 @@ button, .scene, .deck-row, .chip, a{
   font-family: var(--title-font);
   text-transform:uppercase;
   letter-spacing: .18em;
-  font-size: 11px;
+  font-size: 13px; /* ✅ aumentado */
   color: var(--accent);
 }
 
@@ -450,7 +451,7 @@ button, .scene, .deck-row, .chip, a{
   color: var(--panel-ink-soft);
   cursor:pointer;
   display:flex; align-items:center; justify-content:center;
-  font-size:13px;
+  font-size:15px; /* ✅ aumentado */
   transition: all .15s ease;
   flex-shrink:0;
 }
@@ -465,34 +466,34 @@ button, .scene, .deck-row, .chip, a{
   text-transform:uppercase;
   letter-spacing:.18em;
   color: var(--accent);
-  font-size: 11.5px;
+  font-size: 13.5px; /* ✅ aumentado */
   margin-bottom: 10px;
 }
 .pi-title{
   font-family: var(--title-font);
-  font-size: 20px;
+  font-size: 24px; /* ✅ aumentado */
   font-weight:600;
   color: var(--panel-ink);
   margin-bottom: 12px;
 }
 .pi-body{
   font-family: var(--body-font);
-  font-size: 12.5px;
+  font-size: 14.5px; /* ✅ aumentado */
   line-height:1.65;
   color: var(--panel-ink);
   margin-bottom: 10px;
 }
 .pi-body--muted{ color: var(--panel-ink-soft); }
-.pi-hint{ font-family: var(--body-font); font-size:11.5px; color:var(--panel-ink-soft); font-style:italic; }
+.pi-hint{ font-family: var(--body-font); font-size:13.5px; /* ✅ aumentado */ color:var(--panel-ink-soft); font-style:italic; }
 
 .pi-row-between{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
-.pi-count{ font-family: var(--body-font); font-size:12px; color:var(--accent); font-weight:600; letter-spacing:.02em; }
+.pi-count{ font-family: var(--body-font); font-size:14px; /* ✅ aumentado */ color:var(--accent); font-weight:600; letter-spacing:.02em; }
 
 .pi-presets{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
 .chip{
   font-family: var(--body-font);
-  font-size: 11px;
-  padding: 6px 12px;
+  font-size: 13px; /* ✅ aumentado */
+  padding: 7px 14px; /* ✅ un toque más */
   border-radius: var(--radius-pill);
   border: 1px solid var(--panel-border);
   color: var(--panel-ink-soft);
@@ -504,7 +505,7 @@ button, .scene, .deck-row, .chip, a{
 .pi-group-label{
   font-family: var(--body-font);
   text-transform:uppercase;
-  font-size: 10.5px;
+  font-size: 12px; /* ✅ aumentado */
   letter-spacing:.12em;
   color: var(--panel-ink-soft);
   margin: 14px 0 8px;
@@ -514,14 +515,15 @@ button, .scene, .deck-row, .chip, a{
 .deck-list{ display:flex; flex-direction:column; }
 .deck-row{
   display:flex; align-items:center; justify-content:space-between;
-  padding: 9px 2px;
+  padding: 10px 2px; /* ✅ un toque más */
   border-bottom: 1px solid var(--panel-border);
   cursor:pointer;
 }
 .deck-list .deck-row:last-child{ border-bottom:none; }
+.deck-list .deck-row:not(.deck-row--master){ padding-left: 18px; } /* sangría: se leen como hijos de "Institución completa" */
 .dept-row-name{
   display:flex; align-items:center; gap:9px;
-  font-family: var(--body-font); font-size:12.5px; color:var(--panel-ink);
+  font-family: var(--body-font); font-size:14.5px; /* ✅ aumentado */ color:var(--panel-ink);
 }
 .dept-swatch{
   width:11px; height:11px; border-radius:50%;
@@ -530,15 +532,15 @@ button, .scene, .deck-row, .chip, a{
 }
 .deck-row--master .dept-row-name{ font-weight:600; }
 .deck-row-right{ display:flex; align-items:center; gap:10px; }
-.deck-count{ font-family: var(--body-font); font-size:11px; color:var(--panel-ink-soft); min-width:18px; text-align:right; }
-.deck-row input[type="checkbox"]{ width:16px; height:16px; accent-color: var(--accent); cursor:pointer; }
+.deck-count{ font-family: var(--body-font); font-size:13px; /* ✅ aumentado */ color:var(--panel-ink-soft); min-width:18px; text-align:right; }
+.deck-row input[type="checkbox"]{ width:18px; height:18px; /* ✅ un toque más */ accent-color: var(--accent); cursor:pointer; }
 
 .toggle-row{ display:flex; gap:8px; margin-bottom:4px; }
 .toggle-btn{
   flex:1;
   font-family: var(--body-font);
-  font-size:12.5px;
-  padding: 9px 0;
+  font-size:14.5px; /* ✅ aumentado */
+  padding: 10px 0; /* ✅ un toque más */
   border-radius: var(--radius-btn);
   border: 1px solid var(--panel-border);
   color: var(--panel-ink-soft);
@@ -565,7 +567,7 @@ button, .scene, .deck-row, .chip, a{
 
 .credits-card{
   position:relative;
-  width:100%; max-width: 400px;
+  width:100%; max-width: 420px; /* ✅ un toque más ancho */
   max-height: 78vh;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
@@ -591,12 +593,12 @@ button, .scene, .deck-row, .chip, a{
   text-transform:uppercase;
   letter-spacing:.18em;
   color: var(--accent);
-  font-size: 11.5px;
+  font-size: 13.5px; /* ✅ aumentado */
   margin-bottom: 8px;
 }
 .credits-title{
   font-family: var(--title-font);
-  font-size: 21px;
+  font-size: 25px; /* ✅ aumentado */
   font-weight:600;
   color: var(--panel-ink);
   margin-bottom: 22px;
@@ -606,14 +608,14 @@ button, .scene, .deck-row, .chip, a{
 .credits-label{
   font-family: var(--body-font);
   text-transform:uppercase;
-  font-size: 10px;
+  font-size: 11.5px; /* ✅ aumentado */
   letter-spacing:.1em;
   color: var(--accent);
   margin-bottom: 4px;
 }
 .credits-value{
   font-family: var(--body-font);
-  font-size: 12.5px;
+  font-size: 14.5px; /* ✅ aumentado */
   line-height:1.55;
   color: var(--panel-ink);
 }
@@ -628,7 +630,7 @@ button, .scene, .deck-row, .chip, a{
   display:flex; align-items:center; gap:16px;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
-  padding: 9px 12px 9px 20px;
+  padding: 10px 14px 10px 22px; /* ✅ un toque más */
   border-radius: var(--radius-pill);
   opacity:0; pointer-events:none;
   transition: opacity .5s ease, transform .5s ease;
@@ -636,7 +638,7 @@ button, .scene, .deck-row, .chip, a{
 }
 .interactions.visible{ opacity:1; pointer-events:auto; transform: translateX(-50%) translateY(0); }
 
-.pool-status{ font-family: var(--body-font); font-size:11.5px; color:var(--panel-ink-soft); white-space:nowrap; }
+.pool-status{ font-family: var(--body-font); font-size:13.5px; /* ✅ aumentado */ color:var(--panel-ink-soft); white-space:nowrap; }
 .interactions-buttons{ display:flex; align-items:center; gap:10px; }
 
 .btn{
@@ -644,10 +646,10 @@ button, .scene, .deck-row, .chip, a{
   border: 1px solid var(--panel-border);
   background: transparent;
   color: var(--panel-ink);
-  padding: 10px 16px;
+  padding: 11px 18px; /* ✅ un toque más */
   border-radius: var(--radius-btn);
   cursor:pointer;
-  font-size: 12.5px;
+  font-size: 14.5px; /* ✅ aumentado */
   letter-spacing:.02em;
   white-space:nowrap;
   transition: all .18s ease;
@@ -661,29 +663,29 @@ button, .scene, .deck-row, .chip, a{
    Responsivo — teléfonos & tablets
    ============================================================ */
 @media (hover: none) and (pointer: coarse){
-  .deck-row{ padding: 11px 2px; }
-  .toggle-btn{ padding: 10px 0; }
-  .chip{ padding: 8px 13px; }
-  .drawer-close{ width:34px; height:34px; }
+  .deck-row{ padding: 13px 2px; } /* ✅ aumentado */
+  .toggle-btn{ padding: 12px 0; } /* ✅ aumentado */
+  .chip{ padding: 9px 15px; } /* ✅ aumentado */
+  .drawer-close{ width:36px; height:36px; } /* ✅ aumentado */
 }
 
 @media (max-width: 520px){
-  .interactions{ gap:10px; padding:8px 10px 8px 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }
+  .interactions{ gap:10px; padding:9px 12px 9px 18px; /* ✅ ajustado */ bottom: calc(16px + env(safe-area-inset-bottom)); }
   .pool-status{ display:none; }
-  .btn{ padding:9px 13px; font-size:12px; }
+  .btn{ padding:10px 15px; /* ✅ ajustado */ font-size:13.5px; /* ✅ ajustado */ }
   .pi-scroll{ padding:6px 18px calc(24px + env(safe-area-inset-bottom)); }
   .drawer-tab{ padding:14px 6px; }
 }
 
 @media (max-width: 360px){
-  .interactions{ padding:8px 8px 8px 14px; gap:8px; }
-  .btn{ padding:8px 11px; font-size:11.5px; }
+  .interactions{ padding:9px 10px 9px 16px; /* ✅ ajustado */ gap:8px; }
+  .btn{ padding:9px 13px; /* ✅ ajustado */ font-size:13px; /* ✅ ajustado */ }
 }
 
 @media (max-height: 480px){
   .card-wrap{ gap:5px; }
-  .splash p{ font-size: clamp(20px, 6vw, 34px); }
-  .interactions{ bottom: calc(10px + env(safe-area-inset-bottom)); padding:6px 10px 6px 16px; }
+  .splash p{ font-size: clamp(22px, 7vw, 38px); } /* ✅ ajustado */
+  .interactions{ bottom: calc(10px + env(safe-area-inset-bottom)); padding:7px 12px 7px 18px; /* ✅ ajustado */ }
   .drawer-tab{ padding: 10px 6px; }
 }
 
@@ -710,7 +712,7 @@ button, .scene, .deck-row, .chip, a{
   <div class="scrim" id="scrim"></div>
 
   <button class="drawer-tab" id="drawerTab" type="button" aria-expanded="false" aria-controls="pageInfo">
-    <span>Información</span>
+    <span>Menú</span>
   </button>
 
   <aside class="page-info" id="pageInfo" aria-hidden="true">
@@ -718,10 +720,14 @@ button, .scene, .deck-row, .chip, a{
     <div class="pi-scroll">
 
       <section class="pi-section">
-        <p class="pi-eyebrow">El proyecto</p>
-        <h3 class="pi-title">Estrategias Oblicuas</h3>
-        <p class="pi-body">En 1975, Brian Eno y Peter Schmidt empezaron a imprimir un mazo de tarjetas con instrucciones breves y oblicuas para destrabar el trabajo creativo. Eno volvió a ellas una y otra vez durante décadas, y con el tiempo aparecieron nuevas ediciones del mazo original.</p>
-        <p class="pi-body pi-body--muted">Esta versión reemplaza ese mazo histórico por uno propio: las tarjetas y sus autores se cargan desde un archivo de datos editable, y cada una queda identificada por el departamento de quien la escribió.</p>
+        <p class="pi-eyebrow">Sobre el proyecto</p>
+        <h3 class="pi-title">Lateralgias</h3>
+        <p class="pi-body"><span>Este proyecto, articulado por estudiantes de la <strong>Universidad Nacional de las Artes</strong>, busca recrear y reversionar las&nbsp;</span><i><span>Oblique Strategies</span></i><span> (Estrategias Oblicuas), un célebre mazo de cartas creado en 1975 por Brian Eno y Peter Schmidt. La versión original consistía en una baraja de cartas con "estrategias", "dilemas" e "instrucciones" simples y de libre interpretación, concebidas como disparadores creativos y de pensamiento lateral u "oblicuo" para superar situaciones de bloqueo y dudas angustiantes de naturaleza creativa, comunes en todas nuestras disciplinas artísticas. Dado que aquellas cartas reflejan principalmente las profesiones artísticas de sus autores (centradas en la escritura y la música), la propuesta de este proyecto es expandir las fuentes creativas para que resulten más amplias, más diversas y auténticamente representativas de la pluralidad de formas de nuestro pensamiento artístico.</span>
+        </p>
+        <p class="pi-body"><span>Esta nueva versión, llamada </span><i><span>Lateralgias</span></i><span>&nbsp;(como un </span><i><span>"portmanteau"</span></i><span> entre lateral y estrategia), reemplaza el mazo original por uno creado de manera colectiva. Estudiantes de todas las disciplinas artísticas posibles elaboran las tarjetas, pudiendo cualquier miembro de la comunidad universitaria contribuir libremente, y cada carta queda identificada con el departamento y la profesión de quien la escribió, ademas de su nombre.</span>
+        </p>
+        <p class="pi-body pi-body--muted"><span>La idea es que las cartas no dicten una respuesta, sino que esta se encuentre en el pensamiento individual y en la interpretación de las </span><i><span>Lateralgias</span></i><span>, un proceso que puede llevar, directa o indirectamente, a una solución relacionada o no con el problema original. Que sea una puerta al universo de nuestras mentes creativas y no una regla estricta.</span>
+        </p>
         <p class="pi-hint">Toca la carta, o presiona «Sacar carta», para pasar a la siguiente.</p>
       </section>
 
@@ -764,14 +770,14 @@ button, .scene, .deck-row, .chip, a{
     <div class="credits-card" role="dialog" aria-modal="true" aria-label="Créditos del proyecto">
       <button class="drawer-close credits-close" id="creditsClose" type="button" aria-label="Cerrar créditos">✕</button>
       <p class="credits-eyebrow">Créditos</p>
-      <h3 class="credits-title">Estrategias Oblicuas</h3>
+      <h3 class="credits-title">Lateralgias</h3>
       <div class="credits-block">
         <p class="credits-label">Concepto original</p>
         <p class="credits-value">Brian Eno y Peter Schmidt, 1975</p>
       </div>
       <div class="credits-block">
         <p class="credits-label">Esta edición</p>
-        <p class="credits-value">Edición institucional adaptada, 2026</p>
+        <p class="credits-value">Edición UNA, 2026</p>
       </div>
       <div class="credits-block">
         <p class="credits-label">Las cartas</p>
@@ -783,7 +789,7 @@ button, .scene, .deck-row, .chip, a{
   <!-- ESCENARIO CENTRAL -->
   <main class="stage">
     <div class="splash" id="splash" aria-hidden="true">
-      <p>Estrategias Oblicuas</p>
+      <p>Lateralgias</p>
     </div>
 
     <div class="card-wrap" id="cardWrap">
@@ -830,16 +836,16 @@ button, .scene, .deck-row, .chip, a{
    Config fija (no viene del XML): cada carta trae un <departamento>
    de texto, que se hace calzar contra esta lista. */
 const DEPARTMENTS = [
-  { key:'multimedia',    label:'Multimedia',    color:'#007481' },
-  { key:'visual',        label:'Visual',        color:'#08a547' },
-  { key:'docentes',      label:'Docentes',      color:'#848483' },
-  { key:'museo',         label:'Museo',         color:'#000000' },
-  { key:'dramatica',     label:'Dramática',     color:'#ee7d00' },
-  { key:'folklore',      label:'Folklore',      color:'#e63137' },
-  { key:'movimiento',    label:'Movimiento',    color:'#e5007f' },
-  { key:'audiovisuales', label:'Audiovisuales', color:'#c4014b' },
-  { key:'critica',       label:'Crítica',       color:'#821e6e' },
-  { key:'musica',        label:'Música',        color:'#0093d2' },
+  { key:'multimediales',  label:'Multimediales',  color:'#007481' },
+  { key:'visuales',       label:'Visuales',       color:'#08a547' },
+  { key:'docentes',       label:'F. Docente',     color:'#848483' },
+  { key:'dramaticas',     label:'Dramáticas',     color:'#ee7d00' },
+  { key:'folklore',       label:'Folklore',       color:'#e63137' },
+  { key:'movimiento',     label:'Movimiento',     color:'#e5007f' },
+  { key:'audiovisuales',  label:'Audiovisuales',  color:'#c4014b' },
+  { key:'critica',        label:'Crítica',        color:'#821e6e' },
+  { key:'musicales',      label:'Musicales',      color:'#0093d2' },
+  // { key:'museo',          label:'Museo',          color:'#000000' },
 ];
 const INSTITUTION = { key:'institucion', label:'Institución completa', color:'#00457c' };
 const OTRO = { key:'otro', label:'Otro / sin especificar', color: INSTITUTION.color };
@@ -1460,12 +1466,12 @@ function randomizeBackgroundPattern(){ applyPattern(bgPatternEl, BG_PATTERN_SCAL
 function renderTitleCard(){
   contentEl.innerHTML = `
     <div class="title-block">
-      <h1>Estrategias Oblicuas</h1>
-      <h2>Más de cien dilemas que vale la pena enfrentar</h2>
+      <h1>Lateralgias</h1>
+      <h2>Más de cien dilemas que valen la pena encarar</h2>
       <div class="divider"></div>
       <p class="byline">BRIAN ENO Y PETER SCHMIDT</p>
-      <p class="imprint-line">Edición institucional adaptada · 2026</p>
-      <p class="imprint-line imprint-line--muted">Concepto original © 1975 Brian Eno y Peter Schmidt</p>
+      <p class="imprint-line">Edición UNA · 2026</p>
+      <p class="imprint-line imprint-line--muted">Oblique Strategies © 1975 Brian Eno y Peter Schmidt</p>
     </div>`;
 }
 
@@ -1475,8 +1481,8 @@ function renderTitleCard(){
 function renderCoverCard(){
   contentEl.innerHTML = `
     <div class="cover-block">
-      <h1>Estrategias Oblicuas</h1>
-      <p class="cover-hint">Toca para sacar una carta</p>
+      <h1>Lateralgias</h1>
+      <p class="cover-hint">Hacé "click" para sacar una nueva carta</p>
     </div>`;
 }
 
@@ -1503,13 +1509,13 @@ function renderEmptyCard(){
   let msg, showAction = false;
   if(!state.dataLoaded){
     if(state.dataFailed){
-      msg = 'No se pudo cargar el archivo de cartas automáticamente. Abre el panel de información para seleccionar tu Excel.';
+      msg = 'No se pudo cargar el archivo de cartas automáticamente. Abrí el panel de información para seleccionar tu archivo Excel.';
       showAction = true;
     } else {
       msg = 'Cargando cartas…';
     }
   } else {
-    msg = 'No hay departamentos seleccionados. Abre el panel de información y activa al menos uno.';
+    msg = 'No hay departamentos seleccionados. Abrí el panel de información y activá al menos uno.';
     showAction = true;
   }
   const btn = showAction ? `<button type="button" class="btn-on-card empty-action">Abrir panel de información</button>` : '';
@@ -1635,7 +1641,7 @@ function masterRowHtml(){
     <label class="deck-row deck-row--master">
       <span class="dept-row-name">
         <span class="dept-swatch" style="background:${INSTITUTION.color}"></span>
-        Institución completa
+        UNA - (Institución completa)
       </span>
       <span class="deck-row-right">
         <span class="deck-count">${CARDS.length}</span>
