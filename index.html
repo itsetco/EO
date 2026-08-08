@@ -374,6 +374,7 @@ button, .scene, .deck-row, .chip, a{
   min-height: 20px;
   max-height: min(210px, 30vh); /* varias fuentes de a mucho: se acomodan con scroll propio en vez de romper el layout */
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   background: var(--panel-bg);
@@ -536,6 +537,8 @@ button, .scene, .deck-row, .chip, a{
 .dept-row-name{
   display:flex; align-items:center; gap:9px;
   font-family: var(--body-font); font-size:clamp(12px, calc(9.955px + 0.568vw), 14.5px); color:var(--panel-ink);
+  min-width: 0; /* deja que el nombre se achique/envuelva en vez de forzar el ancho de la fila */
+  overflow-wrap: anywhere;
 }
 .dept-swatch{
   width:11px; height:11px; border-radius:50%;
@@ -543,7 +546,7 @@ button, .scene, .deck-row, .chip, a{
   flex-shrink:0;
 }
 .deck-row--master .dept-row-name{ font-weight:600; }
-.deck-row-right{ display:flex; align-items:center; gap:10px; }
+.deck-row-right{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .deck-count{ font-family: var(--body-font); font-size:clamp(11px, calc(9.364px + 0.455vw), 13px); color:var(--panel-ink-soft); min-width:18px; text-align:right; }
 .deck-row input[type="checkbox"]{ width:18px; height:18px; /* ✅ un toque más */ accent-color: var(--accent); cursor:pointer; }
 
@@ -639,7 +642,7 @@ button, .scene, .deck-row, .chip, a{
   position:fixed; left:50%; z-index:30;
   bottom: calc(26px + env(safe-area-inset-bottom));
   transform: translateX(-50%) translateY(14px);
-  display:flex; align-items:center; gap:16px;
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px 16px;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
   padding: 10px 14px 10px 22px; /* ✅ un toque más */
@@ -651,7 +654,7 @@ button, .scene, .deck-row, .chip, a{
 .interactions.visible{ opacity:1; pointer-events:auto; transform: translateX(-50%) translateY(0); }
 
 .pool-status{ font-family: var(--body-font); font-size:clamp(11.5px, calc(9.864px + 0.455vw), 13.5px); color:var(--panel-ink-soft); white-space:nowrap; }
-.interactions-buttons{ display:flex; align-items:center; gap:10px; }
+.interactions-buttons{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px; }
 
 .btn{
   font-family: var(--body-font);
@@ -670,6 +673,32 @@ button, .scene, .deck-row, .chip, a{
 .btn:active{ transform:translateY(0) scale(.98); }
 .btn-primary{ background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight:600; }
 .btn-primary:hover{ filter:brightness(1.07); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 30%, transparent); }
+
+/* En pantallas angostas "Ver introducción" + "Sacar carta" con su padding
+   pueden llegar a no entrar en una sola línea — se usa una etiqueta más
+   corta para ese botón en vez de dejar que el texto se corte o se salga
+   de la píldora. */
+.btn-label-short{ display:none; }
+@media (max-width: 400px){
+  .btn-label-full{ display:none; }
+  .btn-label-short{ display:inline; }
+}
+
+/* ============================================================
+   RED DE SEGURIDAD ANTI-DESBORDE
+   Nombres, carreras o etiquetas de departamento inusualmente largos
+   (vienen de una planilla que no controlamos) nunca deben empujar el
+   layout ni salirse de su caja en pantallas chicas: se envuelven o,
+   si hace falta, se cortan dentro de la palabra en vez de desbordar.
+   ============================================================ */
+.title-block h1, .title-block h2, .title-block .byline, .title-block .imprint-line,
+.cover-block h1, .cover-block .cover-hint,
+.explainer-block p, .strategy-block p, .dash-lead, .dash-list li,
+.empty-block p, .credit-name, .fuente-meta, .info-note,
+.pi-body, .pi-hint, .credits-value, .dept-badge{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 /* Agregados nuevos */
 .explainer-block p {
@@ -832,7 +861,7 @@ button, .scene, .deck-row, .chip, a{
   <nav class="interactions" id="interactions" aria-label="Interacciones de la carta">
     <span class="pool-status" id="poolStatus">Cargando…</span>
     <div class="interactions-buttons">
-      <button class="btn" id="btnIntro" type="button">Ver introducción</button>
+      <button class="btn" id="btnIntro" type="button"><span class="btn-label-full">Ver introducción</span><span class="btn-label-short">Introducción</span></button>
       <button class="btn btn-primary" id="btnDraw" type="button">Sacar carta</button>
     </div>
   </nav>
